@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import SlideMenu from "./SlideMenu"
+// requires slide Menu
+
 const styles = {
     header: {
         backgroundColor: 'black',
@@ -35,9 +38,10 @@ const Header = ({
     blogLink,
     menuImageLocation,
 }) => {
-    
+    const [slideIn, setSlideIn] = useState(true);
     return(
         <div style={styles.header}>
+        
                 <a href={mainLink}>
                     <div style={styles.nameLogoDiv}>
                             <div>
@@ -48,21 +52,9 @@ const Header = ({
                             </div>
                     </div>
                 </a>
-                <div  style={styles.menuDiv}>
+                <div  style={styles.menuDiv} onClick={() => {slideIn ? setSlideIn(false) : setSlideIn(true)}} >
+                    <SlideMenu slideIn={slideIn} contactLink={contactLink} blogLink={blogLink} />
                     <img alt="menu" src={menuImageLocation} style={styles.menuImage}/>
-                    {/* <div className="menu">
-                        <div className="item">
-                            <a href={contactLink} className="contact-link">
-                                Team
-                            </a>
-                        </div>
-                        <div className="item">
-                            <a href={blogLink} className="blog-link">
-                                Blogs
-                            </a>
-                        </div>
-                        
-                    </div> */}
                 </div>
         </div>
     )

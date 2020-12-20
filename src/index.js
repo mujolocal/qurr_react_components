@@ -4,6 +4,7 @@ import Header from "./components/Header";
 
 
 const App = () =>{
+    
     return(
         <div>
             <Header 
@@ -13,6 +14,8 @@ const App = () =>{
                 contactLink="http://127.0.0.1:8000/"
                 blogLink="http://127.0.0.1:8000/"
             />
+
+
         </div>
     );
 };
